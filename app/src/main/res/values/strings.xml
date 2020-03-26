@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Dosiscode</string>
+    <string name="hint_medicamento">Nombre del Medicamento</string>
+    <string name="hint_uso">Uso</string>
+    <string name="hint_fecha_inicio">Fecha de Inicio del Tratamiento</string>
+    <string name="hint_dias_duracion">Días Duración Tratamiento</string>
+    <string name="hint_posologia">Posología/Medida Diaria</string>
+    <string name="hint_lugares_aplicar">Número de lugares a aplicar</string>
+    <string name="btnSiguiente">Siguiente</string>
+    <string name="hint_mensajes">Mensaje</string>
+    <string name="btnAceptar">Aceptar</string>
+    <string name="hint_hora_inicio">Hora de Inicio del Tratamiento</string>
+    <string name="txtCada">cada</string>
+    <string name="hint_hora_posologia">Número Horas Posología</string>
+</resources>

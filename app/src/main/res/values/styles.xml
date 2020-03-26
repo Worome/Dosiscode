@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="EstiloPrimerCampo">
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/Margenes_Laterales</item>
+        <item name="android:layout_marginLeft">@dimen/Margenes_Laterales</item>
+        <item name="android:layout_marginTop">@dimen/Margenes_Arriba</item>
+
+    </style>
+
+    <style name="EstiloRestoCampos">
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/Margenes_Laterales</item>
+        <item name="android:layout_marginLeft">@dimen/Margenes_Laterales</item>
+        <item name="android:layout_marginTop">@dimen/Margenes_InterCampos</item>
+        
+    </style>
+
+    <style name="Botones">
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginRight">@dimen/Margen_Derecho_Boton</item>
+        <item name="android:layout_marginLeft">@dimen/Margen_Izquierdo_Boton</item>
+        <item name="android:layout_marginTop">@dimen/Margenes_Arriba_Boton</item>
+
+    </style>
+
+    <style name="Mensajes">
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginRight">@dimen/Margenes_Laterales</item>
+        <item name="android:layout_marginLeft">@dimen/Margenes_Laterales</item>
+        <item name="android:layout_marginTop">@dimen/Margenes_InterCampos</item>
+
+    </style>
+
+</resources>

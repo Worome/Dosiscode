@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actividades.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etMedicamento"
+                style="@style/EstiloPrimerCampo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Margenes_Laterales"
+                android:layout_marginTop="@dimen/Margenes_Arriba"
+                android:layout_marginRight="@dimen/Margenes_Laterales"
+                android:ems="10"
+                android:hint="@string/hint_medicamento"
+                android:inputType="textPersonName"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/etUso"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Margenes_Laterales"
+                android:layout_marginTop="@dimen/Margenes_InterCampos"
+                android:layout_marginRight="@dimen/Margenes_Laterales"
+                android:ems="10"
+                android:hint="@string/hint_uso"
+                android:inputType="textPersonName"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etFechaInicio"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Margenes_Laterales"
+                android:layout_marginTop="@dimen/Margenes_InterCampos"
+                android:layout_marginRight="@dimen/Margenes_Laterales"
+                android:ems="10"
+                android:hint="@string/hint_fecha_inicio"
+                android:inputType="date"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etHoraInicio"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_hora_inicio"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/etDiasDuracionTratamiento"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Margenes_Laterales"
+                android:layout_marginTop="@dimen/Margenes_InterCampos"
+                android:layout_marginRight="@dimen/Margenes_Laterales"
+                android:ems="10"
+                android:hint="@string/hint_dias_duracion"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/tvCada"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/txtCada" />
+
+            <EditText
+                android:id="@+id/etHoraposologia"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_hora_posologia"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/etPosologia"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_posologia"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/etLugaresAplicar"
+                style="@style/EstiloRestoCampos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_lugares_aplicar"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/btnSiguiente"
+                style="@style/Botones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnSiguiente" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

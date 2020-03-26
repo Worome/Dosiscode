@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Margenes_Arriba">32dp</dimen>
+    <dimen name="Margenes_Laterales">12dp</dimen>
+    <dimen name="Margenes_InterCampos">12dp</dimen>
+    <dimen name="Margenes_Arriba_Boton">48dp</dimen>
+    <dimen name="Margen_Izquierdo_Boton">255dp</dimen>
+    <dimen name="Margen_Derecho_Boton">12dp</dimen>
+</resources>
