@@ -3,16 +3,19 @@ package com.trianacodes.dosiscode.Actividades;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TimePicker;
 
 import com.trianacodes.dosiscode.Entidades.Medicamentos;
 import com.trianacodes.dosiscode.R;
+import com.trianacodes.dosiscode.fragments.DatePickerFragment;
+import com.trianacodes.dosiscode.fragments.TimePickerFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +48,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //Llama al TimePicker
+        HoraInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTimePickerDialog();
+            }
+        });
 
         Siguiente.setOnClickListener(new View.OnClickListener() {
 
@@ -115,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
                 // Sumo 1 al mes porque a Enero le corresponde el 0 si no se lo sumo
-                final String selectDate = dosDias(day) + "/" + dosDias((month + 1)) + "/" + year;
+                final String selectDate = dosCifras(day) + "/" + dosCifras((month + 1)) + "/" + year;
                 FechaInicio.setText(selectDate);
 
             }
@@ -125,7 +134,26 @@ public class MainActivity extends AppCompatActivity {
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
-    private String dosDias(int n){
+    private void showTimePickerDialog() {
+        TimePickerFragment newFragment = TimePickerFragment.newInstance(new TimePickerDialog.OnTimeSetListener() {
+
+
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                // Sumo 1 al mes porque a Enero le corresponde el 0 si no se lo sumo
+                final String selectTime = dosCifras(hourOfDay) + ":" + dosCifras((minute));
+                HoraInicio.setText(selectTime);
+
+            }
+
+        });
+
+        newFragment.show(getSupportFragmentManager(), "timePicker");
+    }
+
+
+    private String dosCifras(int n){
 
         return (n<=9) ? ("0" + n) : String.valueOf(n);
 

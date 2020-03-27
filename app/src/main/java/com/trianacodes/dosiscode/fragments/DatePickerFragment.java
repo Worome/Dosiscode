@@ -1,4 +1,4 @@
-package com.trianacodes.dosiscode.Actividades;
+package com.trianacodes.dosiscode.fragments;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
