@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private String dosCifras(int n){
-
+//-sd
         return (n<=9) ? ("0" + n) : String.valueOf(n);
 
     }
