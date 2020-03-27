@@ -2,10 +2,12 @@ package com.trianacodes.dosiscode.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
         Posoloqía = findViewById(R.id.etPosologia);
         Lugares = findViewById(R.id.etLugaresAplicar);
         Siguiente = findViewById(R.id.btnSiguiente);
+
+        //Llama al DatePicker
+        FechaInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+
+
 
         Siguiente.setOnClickListener(new View.OnClickListener() {
 
@@ -94,6 +106,28 @@ public class MainActivity extends AppCompatActivity {
         Intent controlMedicamento = new Intent(this, ControlMedicacion.class);
         controlMedicamento.putExtra("MedicamentoEnviado", objetoMedicina);
         startActivity(controlMedicamento);
+
+    }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+
+                // Sumo 1 al mes porque a Enero le corresponde el 0 si no se lo sumo
+                final String selectDate = dosDias(day) + "/" + dosDias((month + 1)) + "/" + year;
+                FechaInicio.setText(selectDate);
+
+            }
+
+        });
+
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
+    private String dosDias(int n){
+
+        return (n<=9) ? ("0" + n) : String.valueOf(n);
 
     }
 

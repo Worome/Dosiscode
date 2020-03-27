@@ -2,11 +2,16 @@ package com.trianacodes.dosiscode.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.trianacodes.dosiscode.Entidades.Medicamentos;
 import com.trianacodes.dosiscode.R;
+
+import java.sql.Date;
+import java.text.DateFormat;
+import java.util.Calendar;
 
 public class ControlMedicacion extends AppCompatActivity {
 

@@ -12,4 +12,5 @@
     <string name="hint_hora_inicio">Hora de Inicio del Tratamiento</string>
     <string name="txtCada">cada</string>
     <string name="hint_hora_posologia">Número Horas Posología</string>
+    <string name="tvAvisoFin">El tratamiento finaliza el %s a las %s horas</string>
 </resources>
