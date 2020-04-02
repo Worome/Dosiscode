@@ -17,10 +17,12 @@ import com.trianacodes.dosiscode.R;
 import com.trianacodes.dosiscode.fragments.DatePickerFragment;
 import com.trianacodes.dosiscode.fragments.TimePickerFragment;
 
+import static com.trianacodes.dosiscode.Funciones.funciones.dosCifras;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText Medicamento, Uso, FechaInicio, HoraInicio, DiasDuracion, HorasPosología,
+    private EditText Medicamento, Enfermo, Uso, FechaInicio, HoraInicio, DiasDuracion, HorasPosología,
             Posoloqía, Lugares;
     private Button Siguiente;
     public Medicamentos objetoMedicina = new Medicamentos();
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Medicamento = findViewById(R.id.etMedicamento);
+        Enfermo = findViewById(R.id.etEnfermo);
         Uso = findViewById(R.id.etUso);
         FechaInicio = findViewById(R.id.etFechaInicio);
         HoraInicio = findViewById(R.id.etHoraInicio);
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     protected void lanzaControlMedicamento(){
 
         objetoMedicina.setNombre(Medicamento.getText().toString());
+        objetoMedicina.setEnfermo(Enfermo.getText().toString());
         objetoMedicina.setUso(Uso.getText().toString());
         objetoMedicina.setFechaIncioTratamiento(FechaInicio.getText().toString());
         objetoMedicina.setHoraInicioTratamiento(HoraInicio.getText().toString());
@@ -150,13 +154,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         newFragment.show(getSupportFragmentManager(), "timePicker");
-    }
-
-
-    private String dosCifras(int n){
-
-        return (n<=9) ? ("0" + n) : String.valueOf(n);
-
     }
 
 }

@@ -4,16 +4,17 @@ import java.io.Serializable;
 
 public class Medicamentos implements Serializable {
 
-    private String Nombre, Uso, FechaIncioTratamiento, HoraInicioTratamiento, Posologia;
+    private String Nombre, Enfermo, Uso, FechaIncioTratamiento, HoraInicioTratamiento, Posologia;
     private Integer DiasDuracion, NumeroHorasPosologia, NumeroLugares;
 
     public Medicamentos() {
     }
 
-    public Medicamentos(String nombre, String uso, String fechaIncioTratamiento,
+    public Medicamentos(String nombre, String enfermo, String uso, String fechaIncioTratamiento,
                         String horaInicioTratamiento, String posologia, Integer diasDuracion,
                         Integer numeroHorasPosologia, Integer numeroLugares) {
         Nombre = nombre;
+        Enfermo  = enfermo;
         Uso = uso;
         FechaIncioTratamiento = fechaIncioTratamiento;
         HoraInicioTratamiento = horaInicioTratamiento;
@@ -29,6 +30,14 @@ public class Medicamentos implements Serializable {
 
     public void setNombre(String nombre) {
         Nombre = nombre;
+    }
+
+    public String getEnfermo() {
+        return Enfermo;
+    }
+
+    public void setEnfermo(String enfermo) {
+        Enfermo = enfermo;
     }
 
     public String getUso() {

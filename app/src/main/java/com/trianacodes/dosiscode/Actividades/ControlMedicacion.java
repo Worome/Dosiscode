@@ -3,12 +3,19 @@ package com.trianacodes.dosiscode.Actividades;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.trianacodes.dosiscode.Entidades.Medicamentos;
+import com.trianacodes.dosiscode.Funciones.funciones;
 import com.trianacodes.dosiscode.R;
 
 import org.w3c.dom.Text;
@@ -21,12 +28,19 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+import static com.trianacodes.dosiscode.Funciones.funciones.dosCifras;
+
 public class ControlMedicacion extends AppCompatActivity {
 
     private TextView MedicamentoControl;
     private String FechaControl, HoraControl, NumeroDiasControl, NumeroHoraControl;
+
+    // Creo un objeto de tipo LinearLayout para ir agregándole las vistas en tiempo de ejecución
     private LinearLayout llControl;
-    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+    // Defino los parámetros del LineraLayout
+    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,10 +105,37 @@ public class ControlMedicacion extends AppCompatActivity {
         Indice = HoraControl.indexOf(":");
         HoraFin = Integer.parseInt(HoraControl.substring(0,Indice));
         MinutoFin = Integer.parseInt(HoraControl.substring(Indice + 1, 5));
-        TextView tvControlInicial = new TextView(this);
-        tvControlInicial.setLayoutParams(lp);
-        tvControlInicial.setText(df.format(FechaFin.getTime()) + "\n" + HoraFin + ":" + MinutoFin);
-        llControl.addView(tvControlInicial);
+
+        // Creo una vista pasándole como parámetro, el contexto
+        //TextView tvControlInicial = new TextView(this);
+        Switch swControlInicial = new Switch(this);
+
+        // Establezco los parámetros definidos para el LinearLayout como parámetros de la vista creada
+        //tvControlInicial.setLayoutParams(lp);
+        swControlInicial.setLayoutParams(lp);
+
+        // Establezco el texto a la cista creada
+        //tvControlInicial.setText(df.format(FechaFin.getTime()) + "\n" + dosCifras(HoraFin) + ":" + dosCifras(MinutoFin));
+        swControlInicial.setText(df.format(FechaFin.getTime()) + "\n" + dosCifras(HoraFin) + ":" + dosCifras(MinutoFin));
+
+        // Establezco el tamaño del texto de la vista creada
+        //tvControlInicial.setTextSize(18);
+        swControlInicial.setTextSize(18);
+
+        // Establezco los márgenes de la vista creada
+        //tvControlInicial.setPadding(64,200,16,0);
+        swControlInicial.setPadding(64, 200, 16, 0);
+
+        // Establezo en negrita el estilo del texto de la vista
+        //tvControlInicial.setTypeface(null, Typeface.BOLD);
+        swControlInicial.setTypeface(null, Typeface.BOLD);
+
+        swControlInicial.setId(0);
+
+        // Añado la vista al layout del XML
+        //llControl.addView(tvControlInicial);
+        llControl.addView(swControlInicial);
+
         for (int j = 0; j < (Integer.parseInt(NumeroDiasControl) * HorasDia) - 1; j++){
 
                HoraFin = HoraFin + Integer.parseInt(NumeroHoraControl);
@@ -106,15 +147,17 @@ public class ControlMedicacion extends AppCompatActivity {
 
                }
 
-               TextView tvControl  = new TextView(this);
-               tvControl.setLayoutParams(lp);
-               tvControl.setText(df.format(FechaFin.getTime()) + "\n" + HoraFin + ":" + MinutoFin);
-               llControl.addView(tvControl);
-               //Toast.makeText(this,df.format(FechaFin.getTime()) +  "@@@@" + HoraFin + ":" + MinutoFin, Toast.LENGTH_LONG).show();
+               Switch swControl  = new Switch(this);
+               swControl.setLayoutParams(lp);
+               swControl.setText(df.format(FechaFin.getTime()) + "\n" + dosCifras(HoraFin) + ":" + dosCifras(MinutoFin));
+               swControl.setTextSize(18);
+               swControl.setPadding(64,200,16,0);
+               swControl.setTypeface(null, Typeface.BOLD);
+               swControl.setId(j+1);
+               llControl.addView(swControl);
 
         }
 
     }
-
 
 }

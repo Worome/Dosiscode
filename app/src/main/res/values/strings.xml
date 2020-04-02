@@ -13,4 +13,6 @@
     <string name="txtCada">cada</string>
     <string name="hint_hora_posologia">Número Horas Posología</string>
     <string name="tvAvisoFin">El tratamiento finaliza el %s a las %s horas</string>
+    <string name="hint_enfermo">Enfermo</string>
+    <string name="btnGuardar">Guardar</string>
 </resources>
